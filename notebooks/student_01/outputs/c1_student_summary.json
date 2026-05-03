@@ -1,0 +1,9 @@
+{
+  "timestamp": "2026-05-02T21:44:42.477511",
+  "model": "gemini-2.5-flash-lite",
+  "temperature": 0.2,
+  "max_tokens": 120,
+  "task": "student_neutral_summary",
+  "input_text": "\nDatele FePAL (Federația Părinților și Aparținătorilor Legali) arată rezultate îngrijorătoare, în contextul în care în România nu există încă un cadru sau o direcție clară privind utilizarea inteligenței artificiale.\n\n98% dintre elevii de peste 16 ani folosesc AI, iar 1 din 3 utilizează această tehnologie fără să o înțeleagă pe deplin. \nDeși tinerii sunt deschiși la integrarea inteligenței artificiale în procesul de învățare, ei recunosc și riscurile asociate unei utilizări nestructurate.\nAstfel, 81% dintre ei consideră că AI-ul poate duce la copiere sau dependență.\n\nAceste tendințe se vor reflecta și pe piața muncii. \nUtilizarea inteligenței artificiale va deveni unul dintre criteriile de selecție la locul de muncă al viitorului, iar școala românească trebuie să pregătească tinerii pentru era tehnologiei.\n",
+  "output_text": "98% dintre elevii români peste 16 ani folosesc inteligența artificială, 33% fără a o înțelege complet. Elevii recunosc riscurile de copiere și dependență, dar sunt deschiși la integrarea AI în învățare. FePAL subliniază lipsa unui cadru clar pentru utilizarea AI în România și necesitatea pregătirii tinerilor pentru piața muncii viitoare, unde AI va fi un criteriu de selecție."
+}
