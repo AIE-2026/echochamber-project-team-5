@@ -1,0 +1,9 @@
+{
+  "timestamp": "2026-05-02T21:33:57.149172",
+  "model": "gemini-2.5-flash-lite",
+  "temperature": 0.2,
+  "max_tokens": 120,
+  "task": "student_neutral_summary",
+  "input_text": "\nIndicele costului vieții compară prețul cheltuielilor de zi cu zi — alimente, restaurante, transport, utilități și chirii — cu nivelul din New York, oraș utilizat ca bază de referință cu valoarea 100. Cu alte cuvinte, un indice de aproximativ 40, cât are România, indică un nivel general al prețurilor de circa 40% din costurile considerate standard în orașul american și astfel poate permite compararea directă între economii diferite. România apare printre țările cu cele mai mici costuri ale vieții, atât în regiune, cât și la nivel european și global. \n\nCitește mai mult la: https://www.profit.ro/stiri/economie/romania-se-bate-cu-bulgaria-dar-si-cu-camerun-guatemala-liban-el-salvador-la-costurile-vietii-harta-22352444\n\nInformaţiile publicate de Profit.ro pot fi preluate doar în limita a 500 de caractere şi cu citarea în lead a sursei cu link activ. Orice abatere de la această regulă constituie o încălcare a Legii 8/1996 privind dreptul de autor.\n",
+  "output_text": "Indicele costului vieții compară cheltuielile zilnice cu cele din New York (bază 100). România, cu un indice de aproximativ 40, are costuri ale vieții semnificativ mai mici decât standardul newyorkez. Aceasta plasează țara printre economiile cu cele mai scăzute costuri la nivel regional, european și global."
+}
