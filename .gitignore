@@ -7,7 +7,10 @@ __pycache__/
 .ipynb_checkpoints/
 
 # Data files — tracked via .gitkeep, actual data stays local
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc84df7 (Update files)
 data/bubbles/*
 !data/raw/.gitkeep
 !data/cleaned/.gitkeep
