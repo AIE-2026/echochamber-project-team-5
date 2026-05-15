@@ -1,0 +1,101 @@
+﻿source_channel,video_title,comment_text,model_output
+B1TVChannel,POLITICA ZILEI. I.FOTA: Nici CG nu a avut un val de simpatie și de susținere atat de mare ca BOLOJAN,Ce cauta ND sa discute cu alte persoane din partide?? Cumva sa caute tradatori gen Presoiu? Chiar e PeSeDan😡,"```json
+{
+  ""target"": ""Nicolae Dică (ND) și posibil Ionuț Presoiu"",
+  ""stance"": ""contra"",
+  ""sentiment"": ""negativ"",
+  ""tone"": ""acuzator, suspicios, furios"",
+  ""topic"": ""posibile trădări și alianțe politice suspecte"",
+  ""interpretation_problem"": ""Sarcasm/ironie ('Cumva sa caute tradatori gen Presoiu?'), ambiguitate ('alte persoane din partide'), lipsă de context despre cine este ND și Presoiu, și ce anume se întâmplă.""
+}
+```"
+B1TVChannel,POLITICA ZILEI. I.FOTA: Nici CG nu a avut un val de simpatie și de susținere atat de mare ca BOLOJAN,"Dl. Bolojan trebuie să fie Premierul 2.0 al țării, dacă se doreşte ca reformele să continue/ să se întâmple. Ştim bine ce vor PSD! Corupție şi Împrumuturi ptr. salarii. Noi vrem să ieşim din această roată de hamster. Când dacă nu acum?!","```json
+{
+  ""target"": ""Dl. Bolojan"",
+  ""stance"": ""pro"",
+  ""sentiment"": ""pozitiv"",
+  ""tone"": ""entuziast, convingător"",
+  ""topic"": ""Schimbarea premierului și continuarea reformelor"",
+  ""interpretation_problem"": ""neutru""
+}
+```"
+B1TVChannel,POLITICA ZILEI. I.FOTA: Nici CG nu a avut un val de simpatie și de susținere atat de mare ca BOLOJAN,Are foarte mare dl Paslaru! Grindeanu si parlamentarii care au votat sa raspunda!Acum poate Simion sa ii jupoaie! Scuteste poporul de pacate! Fruntea sus dl Bolojan!,"```json
+{
+  ""target"": ""Grindeanu și parlamentarii care au votat (probabil o lege sau o decizie specifică), dl. Paslaru (menționat admirativ), dl. Bolojan (menționat admirativ), Simion (menționat ca instrument de atac)"",
+  ""stance"": ""Contra Grindeanu și parlamentarilor care au votat; Pro dl. Paslaru și dl. Bolojan; Neutru/Instrumental față de Simion"",
+  ""sentiment"": ""Negativ (față de Grindeanu și parlamentari), Pozitiv (față de Paslaru și Bolojan)"",
+  ""tone"": ""Furios, acuzator, triumfalist, susținător"",
+  ""topic"": ""Responsabilitatea politică și acțiunile unor politicieni, susținerea unor lideri percepuți ca fiind incoruptibili sau salvatori"",
+  ""interpretation_problem"": ""Lipsă de context specific despre 'votul' și 'păcatele' menționate. 'Jupoaie' este o metaforă puternică ce sugerează o confruntare dură și publică. 'Scuteste poporul de pacate' este o expresie exagerată, posibil ironică sau parte dintr-un discurs populist.""
+}
+```"
+B1TVChannel,POLITICA ZILEI. I.FOTA: Nici CG nu a avut un val de simpatie și de susținere atat de mare ca BOLOJAN,Felicitari domnului Fota ❤ este un analist bun si perfect. Toate propunerile pe care le face.ti ajuta multa lume sa inteleaga aceasta politica romaneasca 😂,"```json
+{
+  ""target"": ""domnul Fota"",
+  ""stance"": ""pro"",
+  ""sentiment"": ""pozitiv"",
+  ""tone"": ""admirativ, laudativ"",
+  ""topic"": ""analiza politică și clarificarea situației politice din România"",
+  ""interpretation_problem"": ""sarcasm""
+}
+```"
+B1TVChannel,POLITICA ZILEI. I.FOTA: Nici CG nu a avut un val de simpatie și de susținere atat de mare ca BOLOJAN,NICUSOR A PUS UMARUL IN MOD CARE NU I FACE CINSTE LA SITUATIA URITA IN CARE AM AJUNS !,"```json
+{
+  ""target"": ""Nicuşor Dan"",
+  ""stance"": ""contra"",
+  ""sentiment"": ""negativ"",
+  ""tone"": ""furios, acuzator"",
+  ""topic"": ""responsabilitatea pentru situația actuală a orașului/țării"",
+  ""interpretation_problem"": ""lipsă de context specific despre 'situația urâtă', dar tonul este clar negativ și acuzator.""
+}
+```"
+B1TVChannel,POLITICA ZILEI. I.FOTA: Nici CG nu a avut un val de simpatie și de susținere atat de mare ca BOLOJAN,Eu vreau sa fiu premier! Dar nu am loc de psd!😂😂😂😂😂 si de predoiu,"```json
+{
+  ""target"": ""PSD, Predoiu"",
+  ""stance"": ""contra"",
+  ""sentiment"": ""negativ"",
+  ""tone"": ""ironic, frustrat"",
+  ""topic"": ""politica, lupta pentru putere"",
+  ""interpretation_problem"": ""sarcasm, lipsă de context""
+}
+```"
+B1TVChannel,POLITICA ZILEI. I.FOTA: Nici CG nu a avut un val de simpatie și de susținere atat de mare ca BOLOJAN,Dl Bolojan a dat dovada de o adevarata diplomatie si echilibru. Prea a suportat mizeria PSDista.E strigator la cer. PSD da guvernul Bolojan jos si se cer in opozitie. E scirbos. Ce motive au avut sa depuna motiune ? E o motiune scrisa de niste analfabeti AUR si depusa de PSD.,"```json
+{
+  ""target"": ""PSD, AUR, guvernul Bolojan"",
+  ""stance"": ""contra PSD și AUR, pro guvernul Bolojan"",
+  ""sentiment"": ""negativ față de PSD și AUR, pozitiv față de Bolojan"",
+  ""tone"": ""furios, indignat, critic"",
+  ""topic"": ""criza politică, moțiunea de cenzură, acțiunile PSD și AUR"",
+  ""interpretation_problem"": ""sarcasm implicit prin exagerarea negativității față de PSD și AUR, lipsă de context despre motivele exacte ale moțiunii de cenzură dincolo de acuzațiile autorului.""
+}
+```"
+B1TVChannel,POLITICA ZILEI. BOLOJAN: NU ÎN ORICE CONDIȚII. PSD să recunoască că N-ARE SOLUȚIE. P1/3,"PSD cel mai toxic partid ,iar o parte din PNL s-a intoxicat de psdism după ce s-a frecat de acesta. Nu cred că România are șanse reale de vindecare. Dacă numai după o tentativă a lui Bolojan de a iniția acest proces a căzut guvernul înseamnă că această caracatiță este cu mult mai mare decât se vede.","```json
+{
+  ""target"": ""PSD, PNL, Guvernul, Caracatița (sistemul)"",
+  ""stance"": ""contra"",
+  ""sentiment"": ""negativ"",
+  ""tone"": ""furios, dezamăgit, critic"",
+  ""topic"": ""Corupția și influența negativă a PSD asupra politicii românești"",
+  ""interpretation_problem"": ""Nu există sarcasm, ambiguitate, conspirații sau lipsă de context. Comentariul exprimă o opinie clară și negativă despre PSD și influența sa.""
+}
+```"
+B1TVChannel,POLITICA ZILEI. BOLOJAN: NU ÎN ORICE CONDIȚII. PSD să recunoască că N-ARE SOLUȚIE. P1/3,"L-au activat securistii pe zdreanța bolsevica predoiu.........este sluga obedienta a psd , infiltrat in pnl......fmm","```json
+{
+  ""target"": ""Cătălin Predoiu, PSD, PNL"",
+  ""stance"": ""contra"",
+  ""sentiment"": ""negativ"",
+  ""tone"": ""agresiv, furios, insultător"",
+  ""topic"": ""Critica unui politician și a partidelor politice"",
+  ""interpretation_problem"": ""limbaj vulgar și injurii, sugerând o aversiune puternică și nefondată pe argumente concrete, posibil bazată pe convingeri politice partizane.""
+}
+```"
+B1TVChannel,POLITICA ZILEI. BOLOJAN: NU ÎN ORICE CONDIȚII. PSD să recunoască că N-ARE SOLUȚIE. P1/3,"Nemernicul ăsta de Predoiu, cel care a distrus magistratura in perioada cât a fost la minister in cârdăsie cu PSD vine acum că distrugă definitiv si PNL ducându-l iar in brațele PSD cu care vrea, binențeles dinou in cârdăşie,să redea puterea mafioților din țara asta şi să aducă AUR la putere in 2028 cu 60%...😢😢😢","```json
+{
+  ""target"": ""Cătălin Predoiu, PNL, PSD, AUR"",
+  ""stance"": ""contra"",
+  ""sentiment"": ""negativ"",
+  ""tone"": ""furios, acuzator, alarmist"",
+  ""topic"": ""Acuzații de corupție și manipulare politică, distrugerea PNL și magistraturii, influența PSD și AUR"",
+  ""interpretation_problem"": ""lipsă de context, acuzații grave fără dovezi concrete, limbaj emoțional și exagerat""
+}
+```"
