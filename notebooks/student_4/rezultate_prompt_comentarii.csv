@@ -1,0 +1,111 @@
+﻿source_channel,video_title,comment_text,model_output
+georgesimionoficial,Turul României: realități de la firul ierbii,Felicitării George Simion Președintele României!🇷🇴😇⛑️🇷🇴❤️🛐❤️✝️✝️✝️❤️🕯️💐🇷🇴🙌💯🙌.,"```json
+{
+  ""target"": ""George Simion"",
+  ""stance"": ""pro"",
+  ""sentiment"": ""pozitiv"",
+  ""tone"": ""batjocoritor"",
+  ""topic"": ""politică"",
+  ""interpretation_problem"": ""ironie"",
+  ""justification"": ""Comentariul folosește un ton exagerat de pozitiv și un set de emoji-uri care par să ironizeze sau să batjocorească o eventuală susținere pentru George Simion ca președinte, sugerând o lipsă de seriozitate în această susținere.""
+}
+```"
+georgesimionoficial,Turul României: realități de la firul ierbii,Asa trebuie să fiți printre oameni nu sa se doarmă in parlament succes domnule Simion nu am greșit cind v-am votat,"```json
+{
+  ""target"": ""George Simion"",
+  ""stance"": ""pro"",
+  ""sentiment"": ""pozitiv"",
+  ""tone"": ""aprobator"",
+  ""topic"": ""politică"",
+  ""interpretation_problem"": ""fără problemă"",
+  ""justification"": ""Autorul își exprimă susținerea față de George Simion, apreciind prezența sa printre oameni și confirmând că a votat corect.""
+}
+```"
+georgesimionoficial,Turul României: realități de la firul ierbii,"Eu am votat cu George Simion din primul tur ptr că am vrut să avem președintele României un tânăr Roman,un patriot și un luptător. Încă nu mi-am pierdut speranța, sper să ne facem bine.","```json
+{
+  ""target"": ""George Simion"",
+  ""stance"": ""pro"",
+  ""sentiment"": ""pozitiv"",
+  ""tone"": ""naiv"",
+  ""topic"": ""alegeri"",
+  ""interpretation_problem"": ""fără problemă"",
+  ""justification"": ""Autorul își exprimă susținerea față de George Simion, motivând alegerea prin dorința de a avea un președinte tânăr, patriot și luptător. Sentimentul este unul de speranță.""
+}
+```"
+georgesimionoficial,Turul României: realități de la firul ierbii,"Si de trebuie deposite de combustibil degeaba avem tancuri,blindate etc daca stau parcate ,cauta sursele de petrol care le are romania si daca nu avem Sau nu suficient cumparam CAT de mult putem deposita","```json
+{
+  ""target"": ""Guvernul României / Autoritățile române"",
+  ""stance"": ""anti"",
+  ""sentiment"": ""negativ"",
+  ""tone"": ""moralizator"",
+  ""topic"": ""economie / resurse energetice"",
+  ""interpretation_problem"": ""lipsă context"",
+  ""justification"": ""Autorul critică lipsa de acțiune a autorităților în gestionarea resurselor de combustibil și sugerează o strategie de achiziție mai agresivă. Tonul este moralizator, sugerând că autoritățile nu își fac datoria.""
+}
+```"
+georgesimionoficial,Turul României: realități de la firul ierbii,"Nu te descuraja că dobitoci și proști vor fi peste tot nu poti sa-i mulțumești pe toți, cu D-ZEU înainte, UNITATE LIBERTATE, PACE, DEMOCRAȚIE. FORȚA AUR, GEORGE SIMION. JOS GUVERNUL ROMÂNIEI. DEMISIA NICUȘOR Dan BOLOJAN PREDOIU VEXLER FRITZ LUDOVIC TERHES KELEMEN HUNOR BARNA CÎȚU..... șamd. CĂLIN GEORGESCU PREȘEDINTELE ROMÂNIEI.","```json
+{
+  ""target"": ""Guvernul României, Nicușor Dan, Nicolae Ciucă, Marcel Ciolacu, George Simion, AUR, Călin Georgescu"",
+  ""stance"": ""mixed"",
+  ""sentiment"": ""mixt"",
+  ""tone"": ""batjocoritor, nationalist, furios"",
+  ""topic"": ""politică internă"",
+  ""interpretation_problem"": ""ambiguitate, limbaj ofensator, referințe indirecte"",
+  ""justification"": ""Comentariul exprimă un sentiment mixt, susținând AUR și Călin Georgescu, dar atacând simultan guvernul și alți politicieni. Tonul este batjocoritor și furios, cu elemente naționaliste.""
+}
+```"
+georgesimionoficial,Turul României: realități de la firul ierbii,"Salutare Simioane, bine că te freacă la creier pe tine, dar de Iohanis, nu mai comentează nimeni , la ce deplasări aiurea și fără interes Popular, făcea, sau pe Mucea care se plimbă pe la Timișoara, cu Fritz la braț. Bravoooo George Simion.","```json
+{
+  ""target"": ""George Simion, Klaus Iohannis, Dominic Fritz"",
+  ""stance"": ""mixed"",
+  ""sentiment"": ""mixt"",
+  ""tone"": ""batjocoritor"",
+  ""topic"": ""politică internă"",
+  ""interpretation_problem"": ""ironie, limbaj ofensator"",
+  ""justification"": ""Comentariul folosește un limbaj batjocoritor ('Simioane') și pare să critice deplasările lui Iohannis și Fritz, dar laudă pe George Simion, creând o poziționare mixtă și un sentiment general negativ față de politicienii menționați, cu excepția lui Simion.""
+}
+```"
+georgesimionoficial,Turul României: realități de la firul ierbii,Vă felicit domnule George că mergeți pe teren să ascultați și să vedeți problemele și nevoile oamenilor❤,"```json
+{
+  ""target"": ""George"",
+  ""stance"": ""pro"",
+  ""sentiment"": ""pozitiv"",
+  ""tone"": ""apreciativ"",
+  ""topic"": ""politică"",
+  ""interpretation_problem"": ""fără problemă"",
+  ""justification"": ""Comentariul exprimă apreciere directă față de acțiunile lui George, subliniind o atitudine pozitivă și o recunoaștere a eforturilor sale.""
+}
+```"
+georgesimionoficial,Turul României: realități de la firul ierbii,Tot aud că Simion e un monstru politic. Așa spuneau și despre Vlad Țepeș. Și cu asta am spus tot.🇷🇴☦️,"```json
+{
+  ""target"": ""George Simion"",
+  ""stance"": ""mixed"",
+  ""sentiment"": ""mixt"",
+  ""tone"": ""ironic"",
+  ""topic"": ""politică"",
+  ""interpretation_problem"": ""ironie"",
+  ""justification"": ""Comentariul compară ironic pe George Simion cu Vlad Țepeș, sugerând că acuzațiile la adresa lui Simion ar putea fi exagerate sau nefondate, dar fără a oferi o poziție clară pro sau anti.""
+}
+```"
+georgesimionoficial,Turul României: realități de la firul ierbii,"Așa da, domnule Simion! Tot înainte, până la victoria finală!❤️💛💙🙏🙏🙏","```json
+{
+  ""target"": ""George Simion"",
+  ""stance"": ""pro"",
+  ""sentiment"": ""pozitiv"",
+  ""tone"": ""entuziast"",
+  ""topic"": ""politică"",
+  ""interpretation_problem"": ""fără problemă"",
+  ""justification"": ""Comentariul exprimă susținere explicită ('Așa da', 'Tot înainte') și admirație ('❤️💛💙🙏🙏🙏') față de George Simion, indicând o poziție pro și un sentiment pozitiv. Tonul este entuziast și încurajator.""
+}
+```"
+georgesimionoficial,Turul României: realități de la firul ierbii,Respect George pentru sacrificiile pe care le faci pentru acest popor. Sunt convins ca ve-ti reusi sa ajungeti la putere si astfel sa indreptati lucrurile in tara noastra. Iti doresc mult succes si multa putere de munca.,"```json
+{
+  ""target"": ""George (politician)"",
+  ""stance"": ""pro"",
+  ""sentiment"": ""pozitiv"",
+  ""tone"": ""moralizator"",
+  ""topic"": ""politică"",
+  ""interpretation_problem"": ""fără problemă"",
+  ""justification"": ""Comentariul exprimă susținere și admirație pentru George, considerându-l un salvator al țării. Tonul este unul de încurajare și apreciere a eforturilor sale.""
+}
+```"
