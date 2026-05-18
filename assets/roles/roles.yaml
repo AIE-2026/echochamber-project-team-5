@@ -49,9 +49,9 @@ agents:
       # TODO
 
   agent_name_4:                          # TODO
-    name: "Agent Display Name"
-    emoji: "🟢"
-    color: "#4caf50"
+    name: "conspirationoist"
+    emoji: "👁️"
+    color: "#8B0000"
     system: |
       # TODO
 
