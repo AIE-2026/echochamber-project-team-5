@@ -1,319 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vlad Alexe — Tutorials</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,300&display=swap');
+import json
+import pickle
+from pathlib import Path
+import numpy as np
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+import faiss
+from sentence_transformers import SentenceTransformer
 
-:root {
-  --bg:       #1a1a1a;
-  --surface:  #222222;
-  --border:   #333333;
-  --border-hi:#444444;
-  --text:     #e2e2e2;
-  --dim:      #666666;
-  --sub:      #999999;
-  --accent:   #c8956c;
-  --blue:     #7ab0d4;
-  --green:    #89b99a;
-}
+MODEL_NAME = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+VECTORSTORE_DIR = Path("assets/vectorstores")
+DATA_DIR = Path("data")
 
-:root.light {
-  --bg:       #ffffff;
-  --surface:  #f5f5f5;
-  --border:   #e5e5e5;
-  --border-hi:#cccccc;
-  --text:     #111111;
-  --dim:      #888888;
-  --sub:      #444444;
-  --accent:   #b5784a;
-  --blue:     #2f6fa8;
-  --green:    #3d7a52;
-}
+def load_data(agent_slug: str) -> list:
+    """Helper to safely load chunks from any available project data source."""
+    # Option A: Look in data/cleaned/ for a sample file
+    cleaned_sample = DATA_DIR / "cleaned" / "corpus_youtube_sample.json"
+    if cleaned_sample.exists():
+        print(f"📂 Loading data from cleaned sample catalog: {cleaned_sample}")
+        with open(cleaned_sample, "r", encoding="utf-8") as f:
+            all_chunks = json.load(f)
+        # Filter for the agent if specified inside
+        agent_chunks = [c for c in all_chunks if c.get("agent") == agent_slug]
+        if agent_chunks:
+            return agent_chunks
+        return all_chunks
 
-/* Nav name style */
-.nav-name {
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 300;
-  font-size: 10px;
-  color: var(--dim);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
+    # Option B: Look in data/bubbles/ for an agent-specific file (JSON or JSONL)
+    bubble_dir = DATA_DIR / "bubbles"
+    
+    # Try JSON format
+    json_path = bubble_dir / f"{agent_slug}.json"
+    if json_path.exists():
+        print(f"📂 Loading data from bubble file: {json_path}")
+        with open(json_path, "r", encoding="utf-8") as f:
+            return json.load(f)
+            
+    # Try JSONL format (JSON Lines)
+    jsonl_path = bubble_dir / f"{agent_slug}.jsonl"
+    if jsonl_path.exists():
+        print(f"📂 Loading data from line-by-line bubble file: {jsonl_path}")
+        chunks = []
+        with open(jsonl_path, "r", encoding="utf-8") as f:
+            for line in f:
+                if line.strip():
+                    chunks.append(json.loads(line))
+        return chunks
 
-html { scroll-behavior: smooth; }
+    return []
 
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
-  line-height: 1.7;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  transition: background 0.2s, color 0.2s;
-}
+def build_for_agent(agent_slug: str):
+    print(f"\n--- Generating Vectorstore for Agent: {agent_slug} ---")
+    
+    agent_dir = VECTORSTORE_DIR / agent_slug
+    agent_dir.mkdir(parents=True, exist_ok=True)
+    
+    index_path = agent_dir / "index.faiss"
+    metadata_path = agent_dir / "index.pkl"
 
-/* ── Nav ── */
-nav {
-  height: 50px;
-  border-bottom: 1px solid var(--border);
-  padding: 0 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  background: var(--bg);
-  z-index: 10;
-  transition: background 0.2s;
-}
+    agent_chunks = load_data(agent_slug)
+    
+    if not agent_chunks:
+        print(f"❌ Error: No source data could be located for '{agent_slug}'. Skipping.")
+        return
 
-.nav-left { display: flex; align-items: center; gap: 1.8rem; }
+    # Extract text values safely
+    texts = [chunk["text"] for chunk in agent_chunks if "text" in chunk and chunk["text"]]
+    
+    if not texts:
+        print(f"❌ Error: No text found inside datasets for {agent_slug}")
+        return
 
-.nav-logo {
-  display: flex; align-items: center; gap: 0.55rem;
-  font-size: 12.5px; font-weight: 500; color: var(--text);
-}
+    print(f"Encoding {len(texts)} entries using {MODEL_NAME}...")
+    model = SentenceTransformer(MODEL_NAME)
+    embeddings = model.encode(texts, normalize_embeddings=True, convert_to_numpy=True).astype("float32")
 
-.nav-logo img { width: 22px; height: 22px; border-radius: 50%; }
+    # Set up FAISS mapping
+    dimension = embeddings.shape[1]
+    index = faiss.IndexFlatIP(dimension)
+    index.add(embeddings)
 
-.nav-sep { width: 1px; height: 14px; background: var(--border); }
+    # Write files
+    faiss.write_index(index, str(index_path))
+    with open(metadata_path, "wb") as f:
+        pickle.dump(agent_chunks, f)
 
-.breadcrumb {
-  display: flex; align-items: center; gap: 0.35rem;
-  font-size: 12px; color: var(--dim);
-}
-.breadcrumb a { color: var(--sub); }
-.breadcrumb a:hover { color: var(--text); }
-.breadcrumb .cur { color: var(--text); }
-.breadcrumb .sl { color: var(--border-hi); }
+    print(f"✅ Success! Vectorstore built with {index.ntotal} items.")
 
-.theme-btn {
-  background: none; border: 1px solid var(--border);
-  color: var(--dim); font-family: 'JetBrains Mono', monospace;
-  font-size: 11px; padding: 0.22rem 0.65rem;
-  border-radius: 3px; cursor: pointer;
-  transition: color 0.12s, border-color 0.12s;
-}
-.theme-btn:hover { color: var(--text); border-color: var(--border-hi); }
+def main():
+    agents = ["anti_sistem", "anti_suveranist"]
+    for agent in agents:
+        build_for_agent(agent)
 
-/* ── Hero ── */
-.hero {
-  padding: 3.5rem 3rem 2.5rem;
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-}
-
-.hero-logo {
-  width: 64px; height: 64px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  margin-top: 4px;
-  /* invert logo in dark mode so black logo shows on dark bg */
-  filter: invert(1);
-}
-:root.light .hero-logo { filter: none; }
-
-.hero-body {}
-
-.hero-tag {
-  font-size: 10px; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--accent);
-  margin-bottom: 0.6rem;
-}
-
-.hero h1 {
-  font-family: 'Fraunces', serif;
-  font-size: 2.2rem; font-weight: 700; color: var(--text);
-  letter-spacing: -0.025em; line-height: 1.1;
-  margin-bottom: 0.65rem;
-}
-
-.hero p {
-  font-size: 12.5px; color: var(--sub);
-  max-width: 500px; line-height: 1.8;
-}
-
-.hero-meta {
-  margin-top: 1rem; display: flex; gap: 1.4rem;
-  font-size: 11px; color: var(--dim);
-}
-.hero-meta strong { color: var(--sub); font-weight: 400; }
-
-/* ── Main ── */
-main {
-  flex: 1;
-  padding: 2.8rem 3rem 5rem;
-  max-width: 880px;
-  width: 100%;
-}
-
-.label {
-  font-size: 10px; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--dim);
-  margin-bottom: 1rem;
-}
-
-/* ── Card grid ── */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  border: 1px solid var(--border);
-  border-radius: 5px;
-  overflow: hidden;
-  margin-bottom: 2.8rem;
-}
-
-.card {
-  background: var(--surface);
-  padding: 1.3rem 1.4rem;
-  border-right: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  position: relative;
-  transition: background 0.12s;
-}
-
-.card:hover { background: var(--bg); }
-
-/* Remove extra borders on grid edges */
-.card:nth-child(3n) { border-right: none; }
-.grid > .card:last-child { border-bottom: none; }
-
-.card a.card-link { position: absolute; inset: 0; }
-
-.card-icon { font-size: 1rem; margin-bottom: 0.55rem; }
-
-.card-title {
-  font-size: 12.5px; font-weight: 500; color: var(--text);
-  margin-bottom: 0.3rem; line-height: 1.3;
-}
-
-.card-desc { font-size: 11px; color: var(--dim); line-height: 1.65; }
-
-.card-badge {
-  display: inline-block; margin-top: 0.65rem;
-  font-size: 10px; letter-spacing: 0.05em;
-  color: var(--accent); border: 1px solid var(--accent);
-  padding: 0.06em 0.45em; border-radius: 2px; opacity: 0.75;
-}
-
-/* ── Week table ── */
-.week-table {
-  border: 1px solid var(--border);
-  border-radius: 5px;
-  overflow: hidden;
-  margin-bottom: 2.8rem;
-  width: 100%;
-}
-
-.week-row {
-  display: grid;
-  grid-template-columns: 72px 1fr;
-  border-bottom: 1px solid var(--border);
-  transition: background 0.1s;
-}
-.week-row:last-child { border-bottom: none; }
-.week-row:hover { background: var(--surface); }
-
-.wk {
-  padding: 0.9rem 0.8rem 0.9rem 1.1rem;
-  font-size: 11px; color: var(--dim);
-  border-right: 1px solid var(--border);
-  display: flex; align-items: flex-start;
-  padding-top: 1rem;
-}
-
-.wb { padding: 0.9rem 1.2rem; }
-
-.wb-title { font-size: 12.5px; color: var(--text); margin-bottom: 0.18rem; }
-.wb-topics { font-size: 11px; color: var(--dim); line-height: 1.6; }
-.wb-topics a { color: var(--blue); border-bottom: 1px solid transparent; }
-.wb-topics a:hover { border-bottom-color: var(--blue); }
-
-/* ── Footer ── */
-footer {
-  border-top: 1px solid var(--border);
-  padding: 1.1rem 3rem;
-  font-size: 11px; color: var(--dim);
-  display: flex; justify-content: space-between;
-  align-items: center;
-}
-footer a { color: var(--dim); }
-footer a:hover { color: var(--text); }
-</style>
-</head>
-<body>
-
-<nav>
-  <div class="nav-left">
-    <a href="/" class="nav-name">Vlad Alexe</a>
-  </div>
-  <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">◑ light</button>
-</nav>
-
-<div class="hero">
-  <img class="hero-logo" src="logo.png" alt="">
-  <div class="hero-body">
-    <div class="hero-tag">tutorials</div>
-    <h1>Course Materials</h1>
-    <p>Open teaching materials, guides, and notebooks. Free to use under CC&nbsp;BY-NC-SA&nbsp;4.0.</p>
-</div>
-</div>
-
-<main>
-  <p class="label">Courses</p>
-  <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(300px,1fr))">
-
-    <div class="card">
-      <a href="ai-engineering/" class="card-link"></a>
-      <div class="card-icon">🔊</div>
-      <div class="card-title">AI Engineering</div>
-      <div class="card-desc">Discursive agents, filter bubbles, RAG, and LLM simulation on Romanian political data.</div>
-      <span class="card-badge">ADC 2026</span>
-    </div>
-
-  </div>
-</main>
-
-<footer>
-  <span>© 2026 Vlad Alexe</span>
-  <span>
-    <a href="LICENSE">CC BY-NC-SA 4.0</a>&nbsp;·&nbsp;
-    <a href="https://github.com/VladAlexe/tutorials" target="_blank">GitHub ↗</a>
-  </span>
-</footer>
-
-<script>
-  function toggleTheme() {
-    const r = document.documentElement;
-    const b = document.getElementById('themeBtn');
-    if (r.classList.contains('light')) {
-      r.classList.remove('light');
-      b.textContent = '◑ light';
-      localStorage.setItem('va-theme','dark');
-    } else {
-      r.classList.add('light');
-      b.textContent = '◑ dark';
-      localStorage.setItem('va-theme','light');
-    }
-  }
-  (function() {
-    if (localStorage.getItem('va-theme') === 'light') {
-      document.documentElement.classList.add('light');
-      document.addEventListener('DOMContentLoaded', () => {
-        const b = document.getElementById('themeBtn');
-        if (b) b.textContent = '◑ dark';
-      });
-    }
-  })();
-</script>
-</body>
-</html>
+if __name__ == "__main__":
+    main()
