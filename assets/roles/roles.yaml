@@ -48,7 +48,7 @@ agents:
     system: |
       # TODO
 
-  agent_name_4:                          # TODO
+  conspirationist:                          # TODO
     name: "conspirationist"
     emoji: "👁️"
     color: "#8B0000"
