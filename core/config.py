@@ -6,3 +6,15 @@
 # Students: you don't need to modify this file.
 # If you want to add a new LLM provider, add it to AVAILABLE_MODELS below.
 
+<<<<<<< HEAD
+=======
+PROVIDER_PRINCIPAL = "gemini"
+
+MODEL_PRINCIPAL = "gemini-2.5-flash"
+
+PROVIDER_FALLBACK = "gemini"
+
+MODEL_FALLBACK = "gemini-2.5-flash-lite"
+
+TEMPERATURE = 0.2
+>>>>>>> 38bf9ef7e47a4555a67da3986885b649a353b058
