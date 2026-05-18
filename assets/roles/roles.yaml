@@ -49,7 +49,7 @@ agents:
       # TODO
 
   agent_name_4:                          # TODO
-    name: "conspirationoist"
+    name: "conspirationist"
     emoji: "👁️"
     color: "#8B0000"
     system: |
