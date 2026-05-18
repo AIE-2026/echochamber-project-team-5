@@ -6,12 +6,12 @@
 # Students: you don't need to modify this file.
 # If you want to add a new LLM provider, add it to AVAILABLE_MODELS below.
 
-PROVIDER\_PRINCIPAL = "gemini"
+PROVIDER_PRINCIPAL = "gemini"
 
-MODEL\_PRINCIPAL = "gemini-2.5-flash"
+MODEL_PRINCIPAL = "gemini-2.5-flash"
 
-PROVIDER\_FALLBACK = "gemini"
+PROVIDER_FALLBACK = "gemini"
 
-MODEL\_FALLBACK = "gemini-2.5-flash-lite"
+MODEL_FALLBACK = "gemini-2.5-flash-lite"
 
 TEMPERATURE = 0.2
